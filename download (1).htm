@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>:: PDEA's College of Engineering</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+.marquee-parent {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 250px;
+}
+.marquee-child {
+  display: block;
+  width: 147px;
+  /* width of your text div */
+  height: 30px;
+  /* height of your text div */
+  position: absolute;
+  animation: marquee 13s linear infinite; /* change 5s value to your desired speed */
+}
+.marquee-child:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+@keyframes marquee {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -147px /* same as your text width */
+  }
+}
+
+p#mar1, #mar2, #mar3, #mar4{
+	font-size: 16px;text-align:left;width:220px;
+}
+
+
+.marquee-parent1 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 50px;
+}
+.marquee-child1 {
+  display: block;
+  width: 147px;
+  /* width of your text div */
+  height: 30px;
+  /* height of your text div */
+  position: absolute;
+  animation: marquee1 13s linear infinite; /* change 5s value to your desired speed */
+}
+.marquee-child1:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+@keyframes marquee1 {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -147px /* same as your text width */
+  }
+}
+
+p#mar1, #mar2, #mar3, #mar4{
+	font-size: 16px;text-align:left;width:220px;
+}
+
+.gallerythumb{
+		float: left;
+		display: inline-block;
+		margin: 8px;
+		width: auto;
+		background-color: #b0e6a6;
+		padding: 15px;
+	}
+	
+.slidertext{
+	position:absolute;
+	top:490px;
+	margin-left:10px;
+	margin-right:10px;
+	width:80%;
+	height:auto;
+	z-index:0;
+	font-size:25px;
+	color:#ffffff;
+	line-height:38px;
+	background-color: #0f1010;
+	opacity: 0.6;
+    filter: alpha(opacity=60);
+    border-radius: 10px;
+    padding: 2px 5px 2px 5px;
+}
+</style>
+
+<!-- Gallery Resources-->
+
+<script type="text/javascript" src="gallery/highslide/highslide-with-gallery.js"></script>
+<link rel="stylesheet" type="text/css" href="gallery/highslide/highslide.css" />
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="gallery/highslide/highslide-ie6.css" />
+<![endif]-->
+
+
+
+<!--
+    2) Optionally override the settings defined at the top
+    of the highslide.js file. The parameter hs.graphicsDir is important!
+-->
+
+<script type="text/javascript">
+	hs.graphicsDir = 'gallery/highslide/graphics/';
+	hs.align = 'center';
+	hs.transitions = ['expand', 'crossfade'];
+	hs.fadeInOut = true;
+	hs.dimmingOpacity = 0.8;
+	hs.wrapperClassName = 'borderless floating-caption';
+	hs.captionEval = 'this.thumb.alt';
+	hs.marginLeft = 100; // make room for the thumbstrip
+	hs.marginBottom = 80 // make room for the controls and the floating caption
+	hs.numberPosition = 'caption';
+	hs.lang.number = '%1/%2';
+
+	// Add the slideshow providing the controlbar and the thumbstrip
+	hs.addSlideshow({
+		//slideshowGroup: 'group1',
+		interval: 5000,
+		repeat: false,
+		useControls: true,
+		overlayOptions: {
+			className: 'text-controls',
+			position: 'bottom center',
+			relativeTo: 'viewport',
+			offsetX: 50,
+			offsetY: -5
+
+		},
+		thumbstrip: {
+			position: 'middle left',
+			mode: 'vertical',
+			relativeTo: 'viewport'
+		}
+	});
+
+	// Add the simple close button
+	hs.registerOverlay({
+		html: '<div class="closebutton" onclick="return hs.close(this)" title="Close"></div>',
+		position: 'top right',
+		fade: 2 // fading the semi-transparent overlay looks bad in IE
+	});
+	
+	$(function() {
+	    $('#watchButton').click();
+	});
+	
+</script>
+
+<!--
+	3) Add some extra CSS for this example
+-->
+<style type="text/css">
+/* Center the text in the caption */
+.highslide-caption {
+	width: 100%;
+	text-align: center;
+}
+/* Remove the close button from the controls since we already have one in the corner of the image */
+.highslide-close {
+	display: none !important;
+}
+/* Put the image number in front of the caption */
+.highslide-number {
+	display: inline;
+	padding-right: 1em;
+	color: white;
+}
+
+
+</style>
+
+<!-- Gallery Resources End -->
+
+</head>
+<body id="top">
+<script type="text/javascript">
+(function(f,g,c,h,e,k,i){/*! Jssor */
+new(function(){});var d={Lc:function(a){return a},od:function(a){return-a*(a-2)},Md:function(a){return(a-=1)*a*a*a*a+1}};var b=new function(){var j=this,xb=/\S+/g,F=1,wb=2,cb=3,bb=4,fb=5,G,r=0,l=0,s=0,Y=0,A=0,I=navigator,kb=I.appName,o=I.userAgent,p=parseFloat;function Fb(){if(!G){G={Ue:"ontouchstart"in f||"createTouch"in g};var a;if(I.pointerEnabled||(a=I.msPointerEnabled))G.Wc=a?"msTouchAction":"touchAction"}return G}function v(i){if(!r){r=-1;if(kb=="Microsoft Internet Explorer"&&!!f.attachEvent&&!!f.ActiveXObject){var e=o.indexOf("MSIE");r=F;s=p(o.substring(e+5,o.indexOf(";",e)));/*@cc_on Y=@_jscript_version@*/;l=g.documentMode||s}else if(kb=="Netscape"&&!!f.addEventListener){var d=o.indexOf("Firefox"),b=o.indexOf("Safari"),h=o.indexOf("Chrome"),c=o.indexOf("AppleWebKit");if(d>=0){r=wb;l=p(o.substring(d+8))}else if(b>=0){var j=o.substring(0,b).lastIndexOf("/");r=h>=0?bb:cb;l=p(o.substring(j+1,b))}else{var a=/Trident\/.*rv:([0-9]{1,}[\.0-9]{0,})/i.exec(o);if(a){r=F;l=s=p(a[1])}}if(c>=0)A=p(o.substring(c+12))}else{var a=/(opera)(?:.*version|)[ \/]([\w.]+)/i.exec(o);if(a){r=fb;l=p(a[2])}}}return i==r}function q(){return v(F)}function vb(){return q()&&(l<6||g.compatMode=="BackCompat")}function ab(){return v(cb)}function eb(){return v(fb)}function rb(){return ab()&&A>534&&A<535}function J(){v();return A>537||l>42||r==F&&l>=11}function tb(){return q()&&l<9}function sb(a){var b,c;return function(f){if(!b){b=e;var d=a.substr(0,1).toUpperCase()+a.substr(1);n([a].concat(["WebKit","ms","Moz","O","webkit"]),function(g,e){var b=a;if(e)b=g+d;if(f.style[b]!=i)return c=b})}return c}}function qb(b){var a;return function(c){a=a||sb(b)(c)||b;return a}}var K=qb("transform");function jb(a){return{}.toString.call(a)}var gb={};n(["Boolean","Number","String","Function","Array","Date","RegExp","Object"],function(a){gb["[object "+a+"]"]=a.toLowerCase()});function n(b,d){var a,c;if(jb(b)=="[object Array]"){for(a=0;a<b.length;a++)if(c=d(b[a],a,b))return c}else for(a in b)if(c=d(b[a],a,b))return c}function D(a){return a==h?String(a):gb[jb(a)]||"object"}function hb(a){for(var b in a)return e}function B(a){try{return D(a)=="object"&&!a.nodeType&&a!=a.window&&(!a.constructor||{}.hasOwnProperty.call(a.constructor.prototype,"isPrototypeOf"))}catch(b){}}function u(a,b){return{x:a,y:b}}function nb(b,a){setTimeout(b,a||0)}function H(b,d,c){var a=!b||b=="inherit"?"":b;n(d,function(c){var b=c.exec(a);if(b){var d=a.substr(0,b.index),e=a.substr(b.index+b[0].length+1,a.length-1);a=d+e}});a=c+(!a.indexOf(" ")?"":" ")+a;return a}function pb(b,a){if(l<9)b.style.filter=a}j.ye=Fb;j.cd=q;j.ue=ab;j.qe=J;sb("transform");j.ld=function(){return l};j.id=nb;function V(a){a.constructor===V.caller&&a.Sc&&a.Sc.apply(a,V.caller.arguments)}j.Sc=V;j.jb=function(a){if(j.le(a))a=g.getElementById(a);return a};function t(a){return a||f.event}j.yc=t;j.Ob=function(b){b=t(b);var a=b.target||b.srcElement||g;if(a.nodeType==3)a=j.Cc(a);return a};j.qc=function(a){a=t(a);return{x:a.pageX||a.clientX||0,y:a.pageY||a.clientY||0}};function w(c,d,a){if(a!==i)c.style[d]=a==i?"":a;else{var b=c.currentStyle||c.style;a=b[d];if(a==""&&f.getComputedStyle){b=c.ownerDocument.defaultView.getComputedStyle(c,h);b&&(a=b.getPropertyValue(d)||b[d])}return a}}function X(b,c,a,d){if(a!==i){if(a==h)a="";else d&&(a+="px");w(b,c,a)}else return p(w(b,c))}function m(c,a){var d=a?X:w,b;if(a&4)b=qb(c);return function(e,f){return d(e,b?b(e):c,f,a&2)}}function Ab(b){if(q()&&s<9){var a=/opacity=([^)]*)/.exec(b.style.filter||"");return a?p(a[1])/100:1}else return p(b.style.opacity||"1")}function Cb(b,a,f){if(q()&&s<9){var h=b.style.filter||"",i=new RegExp(/[\s]*alpha\([^\)]*\)/g),e=c.round(100*a),d="";if(e<100||f)d="alpha(opacity="+e+") ";var g=H(h,[i],d);pb(b,g)}else b.style.opacity=a==1?"":c.round(a*100)/100}var L={X:["rotate"],Q:["rotateX"],O:["rotateY"],Jb:["skewX"],wb:["skewY"]};if(!J())L=C(L,{o:["scaleX",2],p:["scaleY",2],E:["translateZ",1]});function M(d,a){var c="";if(a){if(q()&&l&&l<10){delete a.Q;delete a.O;delete a.E}b.f(a,function(d,b){var a=L[b];if(a){var e=a[1]||0;if(N[b]!=d)c+=" "+a[0]+"("+d+(["deg","px",""])[e]+")"}});if(J()){if(a.W||a.Z||a.E!=i)c+=" translate3d("+(a.W||0)+"px,"+(a.Z||0)+"px,"+(a.E||0)+"px)";if(a.o==i)a.o=1;if(a.p==i)a.p=1;if(a.o!=1||a.p!=1)c+=" scale3d("+a.o+", "+a.p+", 1)"}}d.style[K(d)]=c}j.Ec=m("transformOrigin",4);j.de=m("backfaceVisibility",4);j.me=m("transformStyle",4);j.ze=m("perspective",6);j.Je=m("perspectiveOrigin",4);j.Ae=function(a,b){if(q()&&s<9||s<10&&vb())a.style.zoom=b==1?"":b;else{var c=K(a),f="scale("+b+")",e=a.style[c],g=new RegExp(/[\s]*scale\(.*?\)/g),d=H(e,[g],f);a.style[c]=d}};j.Vb=function(b,a){return function(c){c=t(c);var e=c.type,d=c.relatedTarget||(e=="mouseout"?c.toElement:c.fromElement);(!d||d!==a&&!j.Qe(a,d))&&b(c)}};j.a=function(a,d,b,c){a=j.jb(a);if(a.addEventListener){d=="mousewheel"&&a.addEventListener("DOMMouseScroll",b,c);a.addEventListener(d,b,c)}else if(a.attachEvent){a.attachEvent("on"+d,b);c&&a.setCapture&&a.setCapture()}};j.D=function(a,c,d,b){a=j.jb(a);if(a.removeEventListener){c=="mousewheel"&&a.removeEventListener("DOMMouseScroll",d,b);a.removeEventListener(c,d,b)}else if(a.detachEvent){a.detachEvent("on"+c,d);b&&a.releaseCapture&&a.releaseCapture()}};j.Ab=function(a){a=t(a);a.preventDefault&&a.preventDefault();a.cancel=e;a.returnValue=k};j.Oe=function(a){a=t(a);a.stopPropagation&&a.stopPropagation();a.cancelBubble=e};j.G=function(d,c){var a=[].slice.call(arguments,2),b=function(){var b=a.concat([].slice.call(arguments,0));return c.apply(d,b)};return b};j.Me=function(a,b){if(b==i)return a.textContent||a.innerText;var c=g.createTextNode(b);j.Sb(a);a.appendChild(c)};j.Fb=function(d,c){for(var b=[],a=d.firstChild;a;a=a.nextSibling)(c||a.nodeType==1)&&b.push(a);return b};function ib(a,c,e,b){b=b||"u";for(a=a?a.firstChild:h;a;a=a.nextSibling)if(a.nodeType==1){if(S(a,b)==c)return a;if(!e){var d=ib(a,c,e,b);if(d)return d}}}j.B=ib;function Q(a,d,f,b){b=b||"u";var c=[];for(a=a?a.firstChild:h;a;a=a.nextSibling)if(a.nodeType==1){S(a,b)==d&&c.push(a);if(!f){var e=Q(a,d,f,b);if(e.length)c=c.concat(e)}}return c}function db(a,c,d){for(a=a?a.firstChild:h;a;a=a.nextSibling)if(a.nodeType==1){if(a.tagName==c)return a;if(!d){var b=db(a,c,d);if(b)return b}}}j.De=db;j.Ce=function(b,a){return b.getElementsByTagName(a)};function C(){var e=arguments,d,c,b,a,g=1&e[0],f=1+g;d=e[f-1]||{};for(;f<e.length;f++)if(c=e[f])for(b in c){a=c[b];if(a!==i){a=c[b];var h=d[b];d[b]=g&&(B(h)||B(a))?C(g,{},h,a):a}}return d}j.V=C;function W(f,g){var d={},c,a,b;for(c in f){a=f[c];b=g[c];if(a!==b){var e;if(B(a)&&B(b)){a=W(a,b);e=!hb(a)}!e&&(d[c]=a)}}return d}j.Vc=function(a){return D(a)=="function"};j.le=function(a){return D(a)=="string"};j.Ad=function(a){return!isNaN(p(a))&&isFinite(a)};j.f=n;function P(a){return g.createElement(a)}j.Eb=function(){return P("DIV")};j.wd=function(){return P("SPAN")};j.Jc=function(){};function T(b,c,a){if(a==i)return b.getAttribute(c);b.setAttribute(c,a)}function S(a,b){return T(a,b)||T(a,"data-"+b)}j.q=T;j.g=S;function y(b,a){if(a==i)return b.className;b.className=a}j.Kc=y;function mb(b){var a={};n(b,function(b){if(b!=i)a[b]=b});return a}function ob(b,a){return b.match(a||xb)}function O(b,a){return mb(ob(b||"",a))}j.rd=ob;function Z(b,c){var a="";n(c,function(c){a&&(a+=b);a+=c});return a}function E(a,c,b){y(a,Z(" ",C(W(O(y(a)),O(c)),O(b))))}j.Cc=function(a){return a.parentNode};j.L=function(a){j.T(a,"none")};j.J=function(a,b){j.T(a,b?"none":"")};j.Yd=function(b,a){b.removeAttribute(a)};j.Wd=function(){return q()&&l<10};j.Vd=function(d,a){if(a)d.style.clip="rect("+c.round(a.j||a.s||0)+"px "+c.round(a.z)+"px "+c.round(a.v)+"px "+c.round(a.k||a.n||0)+"px)";else if(a!==i){var g=d.style.cssText,f=[new RegExp(/[\s]*clip: rect\(.*?\)[;]?/i),new RegExp(/[\s]*cliptop: .*?[;]?/i),new RegExp(/[\s]*clipright: .*?[;]?/i),new RegExp(/[\s]*clipbottom: .*?[;]?/i),new RegExp(/[\s]*clipleft: .*?[;]?/i)],e=H(g,f,"");b.Kb(d,e)}};j.H=function(){return+new Date};j.I=function(b,a){b.appendChild(a)};j.Ib=function(b,a,c){(c||a.parentNode).insertBefore(b,a)};j.Hb=function(b,a){a=a||b.parentNode;a&&a.removeChild(b)};j.Jd=function(a,b){n(a,function(a){j.Hb(a,b)})};j.Sb=function(a){j.Jd(j.Fb(a,e),a)};j.Kd=function(a,b){var c=j.Cc(a);b&1&&j.C(a,(j.l(c)-j.l(a))/2);b&2&&j.F(a,(j.m(c)-j.m(a))/2)};j.Nd=function(b,a){return parseInt(b,a||10)};j.Pd=p;j.Qe=function(b,a){var c=g.body;while(a&&b!==a&&c!==a)try{a=a.parentNode}catch(d){return k}return b===a};function U(d,c,b){var a=d.cloneNode(!c);!b&&j.Yd(a,"id");return a}j.sb=U;j.fb=function(d,f){var a=new Image;function b(e,d){j.D(a,"load",b);j.D(a,"abort",c);j.D(a,"error",c);f&&f(a,d)}function c(a){b(a,e)}if(eb()&&l<11.6||!d)b(!d);else{j.a(a,"load",b);j.a(a,"abort",c);j.a(a,"error",c);a.src=d}};j.Rd=function(d,a,e){var c=d.length+1;function b(b){c--;if(a&&b&&b.src==a.src)a=b;!c&&e&&e(a)}n(d,function(a){j.fb(a.src,b)});b()};j.Sd=function(a,g,i,h){if(h)a=U(a);var c=Q(a,g);if(!c.length)c=b.Ce(a,g);for(var f=c.length-1;f>-1;f--){var d=c[f],e=U(i);y(e,y(d));b.Kb(e,d.style.cssText);b.Ib(e,d);b.Hb(d)}return a};function Db(a){var l=this,p="",r=["av","pv","ds","dn"],e=[],q,k=0,f=0,d=0;function h(){E(a,q,e[d||k||f&2||f]);b.U(a,"pointer-events",d?"none":"")}function c(){k=0;h();j.D(g,"mouseup",c);j.D(g,"touchend",c);j.D(g,"touchcancel",c)}function o(a){if(d)j.Ab(a);else{k=4;h();j.a(g,"mouseup",c);j.a(g,"touchend",c);j.a(g,"touchcancel",c)}}l.Ud=function(a){if(a===i)return f;f=a&2||a&1;h()};l.Mb=function(a){if(a===i)return!d;d=a?0:3;h()};l.ab=a=j.jb(a);var m=b.rd(y(a));if(m)p=m.shift();n(r,function(a){e.push(p+a)});q=Z(" ",e);e.unshift("");j.a(a,"mousedown",o);j.a(a,"touchstart",o)}j.cc=function(a){return new Db(a)};j.U=w;j.xb=m("overflow");j.F=m("top",2);j.C=m("left",2);j.l=m("width",2);j.m=m("height",2);j.bc=m("marginLeft",2);j.fc=m("marginTop",2);j.u=m("position");j.T=m("display");j.A=m("zIndex",1);j.ac=function(b,a,c){if(a!=i)Cb(b,a,c);else return Ab(b)};j.Kb=function(a,b){if(b!=i)a.style.cssText=b;else return a.style.cssText};j.be=function(b,a){if(a===i){a=w(b,"backgroundImage")||"";var c=/\burl\s*\(\s*["']?([^"'\r\n,]+)["']?\s*\)/gi.exec(a)||[];return c[1]}w(b,"backgroundImage",a?"url('"+a+"')":"")};var R={nb:j.ac,j:j.F,k:j.C,vb:j.l,Lb:j.m,mb:j.u,df:j.T,lb:j.A};function x(f,l){var e=tb(),b=J(),d=rb(),g=K(f);function k(b,d,a){var e=b.db(u(-d/2,-a/2)),f=b.db(u(d/2,-a/2)),g=b.db(u(d/2,a/2)),h=b.db(u(-d/2,a/2));b.db(u(300,300));return u(c.min(e.x,f.x,g.x,h.x)+d/2,c.min(e.y,f.y,g.y,h.y)+a/2)}function a(d,a){a=a||{};var n=a.E||0,p=(a.Q||0)%360,q=(a.O||0)%360,u=(a.X||0)%360,l=a.o,m=a.p,f=a.cf;if(l==i)l=1;if(m==i)m=1;if(f==i)f=1;if(e){n=0;p=0;q=0;f=0}var c=new zb(a.W,a.Z,n);c.Q(p);c.O(q);c.Fd(u);c.Ed(a.Jb,a.wb);c.Zb(l,m,f);if(b){c.ob(a.n,a.s);d.style[g]=c.Qd()}else if(!Y||Y<9){var o="",h={x:0,y:0};if(a.M)h=k(c,a.M,a.cb);j.fc(d,h.y);j.bc(d,h.x);o=c.Td();var s=d.style.filter,t=new RegExp(/[\s]*progid:DXImageTransform\.Microsoft\.Matrix\([^\)]*\)/g),r=H(s,[t],o);pb(d,r)}}x=function(e,c){c=c||{};var g=c.n,k=c.s,f;n(R,function(a,b){f=c[b];f!==i&&a(e,f)});j.Vd(e,c.c);if(!b){g!=i&&j.C(e,(c.Dc||0)+g);k!=i&&j.F(e,(c.Rc||0)+k)}if(c.Cd)if(d)nb(j.G(h,M,e,c));else a(e,c)};j.kb=M;if(d)j.kb=x;if(e)j.kb=a;else if(!b)a=M;j.K=x;x(f,l)}j.kb=x;j.K=x;function zb(j,k,o){var d=this,b=[1,0,0,0,0,1,0,0,0,0,1,0,j||0,k||0,o||0,1],i=c.sin,g=c.cos,l=c.tan;function f(a){return a*c.PI/180}function n(a,b){return{x:a,y:b}}function m(c,e,l,m,o,r,t,u,w,z,A,C,E,b,f,k,a,g,i,n,p,q,s,v,x,y,B,D,F,d,h,j){return[c*a+e*p+l*x+m*F,c*g+e*q+l*y+m*d,c*i+e*s+l*B+m*h,c*n+e*v+l*D+m*j,o*a+r*p+t*x+u*F,o*g+r*q+t*y+u*d,o*i+r*s+t*B+u*h,o*n+r*v+t*D+u*j,w*a+z*p+A*x+C*F,w*g+z*q+A*y+C*d,w*i+z*s+A*B+C*h,w*n+z*v+A*D+C*j,E*a+b*p+f*x+k*F,E*g+b*q+f*y+k*d,E*i+b*s+f*B+k*h,E*n+b*v+f*D+k*j]}function e(c,a){return m.apply(h,(a||b).concat(c))}d.Zb=function(a,c,d){if(a!=1||c!=1||d!=1)b=e([a,0,0,0,0,c,0,0,0,0,d,0,0,0,0,1])};d.ob=function(a,c,d){b[12]+=a||0;b[13]+=c||0;b[14]+=d||0};d.Q=function(c){if(c){a=f(c);var d=g(a),h=i(a);b=e([1,0,0,0,0,d,h,0,0,-h,d,0,0,0,0,1])}};d.O=function(c){if(c){a=f(c);var d=g(a),h=i(a);b=e([d,0,-h,0,0,1,0,0,h,0,d,0,0,0,0,1])}};d.Fd=function(c){if(c){a=f(c);var d=g(a),h=i(a);b=e([d,h,0,0,-h,d,0,0,0,0,1,0,0,0,0,1])}};d.Ed=function(a,c){if(a||c){j=f(a);k=f(c);b=e([1,l(k),0,0,l(j),1,0,0,0,0,1,0,0,0,0,1])}};d.db=function(c){var a=e(b,[1,0,0,0,0,1,0,0,0,0,1,0,c.x,c.y,0,1]);return n(a[12],a[13])};d.Qd=function(){return"matrix3d("+b.join(",")+")"};d.Td=function(){return"progid:DXImageTransform.Microsoft.Matrix(M11="+b[0]+", M12="+b[4]+", M21="+b[1]+", M22="+b[5]+", SizingMethod='auto expand')"}}new function(){var a=this;function b(d,g){for(var j=d[0].length,i=d.length,h=g[0].length,f=[],c=0;c<i;c++)for(var k=f[c]=[],b=0;b<h;b++){for(var e=0,a=0;a<j;a++)e+=d[c][a]*g[a][b];k[b]=e}return f}a.o=function(b,c){return a.Oc(b,c,0)};a.p=function(b,c){return a.Oc(b,0,c)};a.Oc=function(a,c,d){return b(a,[[c,0],[0,d]])};a.db=function(d,c){var a=b(d,[[c.x],[c.y]]);return u(a[0][0],a[1][0])}};var N={Dc:0,Rc:0,n:0,s:0,bb:1,o:1,p:1,X:0,Q:0,O:0,W:0,Z:0,E:0,Jb:0,wb:0};j.sd=function(c,d){var a=c||{};if(c)if(b.Vc(c))a={N:a};else if(b.Vc(c.c))a.c={N:c.c};a.N=a.N||d;if(a.c)a.c.N=a.c.N||d;return a};j.xd=function(l,m,x,q,z,A,n){var a=m;if(l){a={};for(var g in m){var B=A[g]||1,w=z[g]||[0,1],f=(x-w[0])/w[1];f=c.min(c.max(f,0),1);f=f*B;var u=c.floor(f);if(f!=u)f-=u;var j=q.N||d.Lc,k,C=l[g],o=m[g];if(b.Ad(o)){j=q[g]||j;var y=j(f);k=C+o*y}else{k=b.V({yb:{}},l[g]);var v=q[g]||{};b.f(o.yb||o,function(d,a){j=v[a]||v.N||j;var c=j(f),b=d*c;k.yb[a]=b;k[a]+=b})}a[g]=k}var t=b.f(m,function(b,a){return N[a]!=i});t&&b.f(N,function(c,b){if(a[b]==i&&l[b]!==i)a[b]=l[b]});if(t){if(a.bb)a.o=a.p=a.bb;a.M=n.M;a.cb=n.cb;a.Cd=e}}if(m.c&&n.ob){var p=a.c.yb,s=(p.j||0)+(p.v||0),r=(p.k||0)+(p.z||0);a.k=(a.k||0)+r;a.j=(a.j||0)+s;a.c.k-=r;a.c.z-=r;a.c.j-=s;a.c.v-=s}if(a.c&&b.Wd()&&!a.c.j&&!a.c.k&&!a.c.s&&!a.c.n&&a.c.z==n.M&&a.c.v==n.cb)a.c=h;return a}};function m(){var a=this,d=[];function i(a,b){d.push({Wb:a,Ub:b})}function h(a,c){b.f(d,function(b,e){b.Wb==a&&b.Ub===c&&d.splice(e,1)})}a.hb=a.addEventListener=i;a.removeEventListener=h;a.i=function(a){var c=[].slice.call(arguments,1);b.f(d,function(b){b.Wb==a&&b.Ub.apply(f,c)})}}var l=function(z,E,g,K,N,M){z=z||0;var a=this,q,o,p,u,B=0,H,I,G,C,y=0,j=0,m=0,F,l,i,d,n,D,w=[],x;function P(a){i+=a;d+=a;l+=a;j+=a;m+=a;y+=a}function t(p){var f=p;if(n)if(!D&&(f>=d||f<i)||D&&f>=n)f=((f-i)%n+n)%n+i;if(!F||u||j!=f){var h=c.min(f,d);h=c.max(h,i);if(!F||u||h!=m){if(M){var k=(h-l)/(E||1);if(g.He)k=1-k;var o=b.xd(N,M,k,H,G,I,g);if(x)b.f(o,function(b,a){x[a]&&x[a](K,b)});else b.K(K,o)}a.dc(m-l,h-l);var r=m,q=m=h;b.f(w,function(b,c){var a=f<=j?w[w.length-c-1]:b;a.P(m-y)});j=f;F=e;a.Db(r,q)}}}function A(a,b,e){b&&a.Pb(d);if(!e){i=c.min(i,a.Mc()+y);d=c.max(d,a.Rb()+y)}w.push(a)}var r=f.requestAnimationFrame||f.webkitRequestAnimationFrame||f.mozRequestAnimationFrame||f.msRequestAnimationFrame;if(b.ue()&&b.ld()<7)r=h;r=r||function(a){b.id(a,g.Pc)};function J(){if(q){var d=b.H(),e=c.min(d-B,g.wc),a=j+e*p;B=d;if(a*p>=o*p)a=o;t(a);if(!u&&a*p>=o*p)L(C);else r(J)}}function s(f,g,h){if(!q){q=e;u=h;C=g;f=c.max(f,i);f=c.min(f,d);o=f;p=o<j?-1:1;a.uc();B=b.H();r(J)}}function L(b){if(q){u=q=C=k;a.Bc();b&&b()}}a.rc=function(a,b,c){s(a?j+a:d,b,c)};a.sc=s;a.eb=L;a.we=function(a){s(a)};a.S=function(){return j};a.hd=function(){return o};a.ib=function(){return m};a.P=t;a.ob=function(a){t(j+a)};a.md=function(){return q};a.Fe=function(a){n=a};a.Pb=P;a.Ic=function(a,b){A(a,0,b)};a.Tb=function(a){A(a,1)};a.Mc=function(){return i};a.Rb=function(){return d};a.Db=a.uc=a.Bc=a.dc=b.Jc;a.Xb=b.H();g=b.V({Pc:16,wc:50},g);n=g.Yb;D=g.Bd;x=g.Id;i=l=z;d=z+E;I=g.Ld||{};G=g.Od||{};H=b.sd(g.qb)};new(function(){});var j=function(q,fc){var o=this;function Bc(){var a=this;l.call(a,-1e8,2e8);a.te=function(){var b=a.ib(),d=c.floor(b),f=t(d),e=b-c.floor(b);return{Y:f,re:d,mb:e}};a.Db=function(b,a){var d=c.floor(a);if(d!=a&&a>b)d++;Tb(d,e);o.i(j.pe,t(a),t(b),a,b)}}function Ac(){var a=this;l.call(a,0,0,{Yb:r});b.f(A,function(b){D&1&&b.Fe(r);a.Tb(b);b.Pb(kb/bc)})}function zc(){var a=this,b=Ub.ab;l.call(a,-1,2,{qb:d.Lc,Id:{mb:Zb},Yb:r},b,{mb:1},{mb:-2});a.Qb=b}function mc(n,m){var b=this,d,f,g,i,c;l.call(b,-1e8,2e8,{wc:100});b.uc=function(){O=e;R=h;o.i(j.he,t(w.S()),w.S())};b.Bc=function(){O=k;i=k;var a=w.te();o.i(j.Re,t(w.S()),w.S());!a.mb&&Dc(a.re,s)};b.Db=function(j,h){var b;if(i)b=c;else{b=f;if(g){var e=h/g;b=a.ed(e)*(f-d)+d}}w.P(b)};b.Cb=function(a,e,c,h){d=a;f=e;g=c;w.P(a);b.P(0);b.sc(c,h)};b.Pe=function(a){i=e;c=a;b.rc(a,h,e)};b.Ne=function(a){c=a};w=new Bc;w.Ic(n);w.Ic(m)}function oc(){var c=this,a=Xb();b.A(a,0);b.U(a,"pointerEvents","none");c.ab=a;c.Gb=function(){b.L(a);b.Sb(a)}}function xc(n,f){var d=this,q,N,v,i,y=[],x,C,W,H,S,F,g,w,p;l.call(d,-u,u+1,{});function E(a){q&&q.gd();T(n,a,0);F=e;q=new J.R(n,J,b.Pd(b.g(n,"idle"))||lc,!I);q.P(0)}function Z(){q.Xb<J.Xb&&E()}function O(p,r,n){if(!H){H=e;if(i&&n){var g=n.width,c=n.height,m=g,l=c;if(g&&c&&a.ub){if(a.ub&3&&(!(a.ub&4)||g>L||c>K)){var h=k,q=L/K*c/g;if(a.ub&1)h=q>1;else if(a.ub&2)h=q<1;m=h?g*K/c:L;l=h?K:c*L/g}b.l(i,m);b.m(i,l);b.F(i,(K-l)/2);b.C(i,(L-m)/2)}b.u(i,"absolute");o.i(j.Le,f)}}b.L(r);p&&p(d)}function Y(b,c,e,g){if(g==R&&s==f&&I)if(!Cc){var a=t(b);B.oe(a,f,c,d,e);c.Te();U.Pb(a-U.Mc()-1);U.P(a);z.Cb(b,b,0)}}function bb(b){if(b==R&&s==f){if(!g){var a=h;if(B)if(B.Y==f)a=B.ve();else B.Gb();Z();g=new vc(n,f,a,q);g.ad(p)}!g.md()&&g.ec()}}function G(e,i,l){if(e==f){if(e!=i)A[i]&&A[i].dd();else!l&&g&&g.Ie();p&&p.Mb();var m=R=b.H();d.fb(b.G(h,bb,m))}else{var k=c.min(f,e),j=c.max(f,e),o=c.min(j-k,k+r-j),n=u+a.Ge-1;(!S||o<=n)&&d.fb()}}function db(){if(s==f&&g){g.eb();p&&p.Ee();p&&p.Be();g.jd()}}function eb(){s==f&&g&&g.eb()}function ab(a){!P&&o.i(j.ae,f,a)}function Q(){p=w.pInstance;g&&g.ad(p)}d.fb=function(c,a){a=a||v;if(y.length&&!H){b.J(a);if(!W){W=e;o.i(j.pd,f);b.f(y,function(a){if(!b.q(a,"src")){a.src=b.g(a,"src2")||"";b.T(a,a["display-origin"])}})}b.Rd(y,i,b.G(h,O,c,a))}else O(c,a)};d.Ke=function(){var j=f;if(a.fd<0)j-=r;var e=j+a.fd*tc;if(D&2)e=t(e);if(!(D&1)&&!ib)e=c.max(0,c.min(e,r-u));if(e!=f){if(B){var g=B.ne(r);if(g){var k=R=b.H(),i=A[t(e)];return i.fb(b.G(h,Y,e,i,g,k),v)}}cb(e)}else if(a.tb){d.dd();G(f,f)}};d.kc=function(){G(f,f,e)};d.dd=function(){p&&p.Ee();p&&p.Be();d.kd();g&&g.ke();g=h;E()};d.Te=function(){b.L(n)};d.kd=function(){b.J(n)};d.xe=function(){p&&p.Mb()};function T(a,c,d){if(b.q(a,"jssor-slider"))return;if(!F){if(a.tagName=="IMG"){y.push(a);if(!b.q(a,"src")){S=e;a["display-origin"]=b.T(a);b.L(a)}}var f=b.be(a);if(f){var g=new Image;b.g(g,"src2",f);y.push(g)}if(d){b.A(a,(b.A(a)||0)+1);b.fc(a,b.fc(a)||0);b.bc(a,b.bc(a)||0);b.kb(a,{E:0})}}var h=b.Fb(a);b.f(h,function(f){var h=f.tagName,j=b.g(f,"u");if(j=="player"&&!w){w=f;if(w.pInstance)Q();else b.a(w,"dataavailable",Q)}if(j=="caption"){if(c){b.Ec(f,b.g(f,"to"));b.de(f,b.g(f,"bf"));b.g(f,"3d")&&b.me(f,"preserve-3d")}else if(!b.cd()){var g=b.sb(f,k,e);b.Ib(g,f,a);b.Hb(f,a);f=g;c=e}}else if(!F&&!d&&!i){if(h=="A"){if(b.g(f,"u")=="image")i=b.De(f,"IMG");else i=b.B(f,"image",e);if(i){x=f;b.T(x,"block");b.K(x,V);C=b.sb(x,e);b.u(x,"relative");b.ac(C,0);b.U(C,"backgroundColor","#000")}}else if(h=="IMG"&&b.g(f,"u")=="image")i=f;if(i){i.border=0;b.K(i,V)}}T(f,c,d+1)})}d.dc=function(c,b){var a=u-b;Zb(N,a)};d.Y=f;m.call(d);b.ze(n,b.g(n,"p"));b.Je(n,b.g(n,"po"));var M=b.B(n,"thumb",e);if(M){b.sb(M);b.L(M)}b.J(n);v=b.sb(gb);b.A(v,1e3);b.a(n,"click",ab);E(e);d.se=i;d.zc=C;d.Qb=N=n;b.I(N,v);o.hb(203,G);o.hb(28,eb);o.hb(24,db)}function vc(y,f,p,q){var a=this,m=0,u=0,g,h,d,c,i,t,r,n=A[f];l.call(a,0,0);function v(){b.Sb(N);cc&&i&&n.zc&&b.I(N,n.zc);b.J(N,!i&&n.se)}function w(){a.ec()}function x(b){r=b;a.eb();a.ec()}a.ec=function(){var b=a.ib();if(!C&&!O&&!r&&s==f){if(!b){if(g&&!i){i=e;a.jd(e);o.i(j.ce,f,m,u,g,c)}v()}var k,p=j.vc;if(b!=c)if(b==d)k=c;else if(b==h)k=d;else if(!b)k=h;else k=a.hd();o.i(p,f,b,m,h,d,c);var l=I&&(!E||F);if(b==c)(d!=c&&!(E&12)||l)&&n.Ke();else(l||b!=d)&&a.sc(k,w)}};a.Ie=function(){d==c&&d==a.ib()&&a.P(h)};a.ke=function(){B&&B.Y==f&&B.Gb();var b=a.ib();b<c&&o.i(j.vc,f,-b-1,m,h,d,c)};a.jd=function(a){p&&b.xb(lb,a&&p.Uc.Ze?"":"hidden")};a.dc=function(b,a){if(i&&a>=g){i=k;v();n.kd();B.Gb();o.i(j.je,f,m,u,g,c)}o.i(j.ie,f,a,m,h,d,c)};a.ad=function(a){if(a&&!t){t=a;a.hb($JssorPlayer$.td,x)}};p&&a.Tb(p);g=a.Rb();a.Tb(q);h=g+q.xc;c=a.Rb();d=I?g+q.Ac:c}function Kb(a,c,d){b.C(a,c);b.F(a,d)}function Zb(c,b){var a=x>0?x:fb,d=zb*b*(a&1),e=Ab*b*(a>>1&1);Kb(c,d,e)}function Pb(){qb=O;Ib=z.hd();G=w.S()}function gc(){Pb();if(C||!F&&E&12){z.eb();o.i(j.ge)}}function ec(f){if(!C&&(F||!(E&12))&&!z.md()){var d=w.S(),b=c.ceil(G);if(f&&c.abs(H)>=a.Tc){b=c.ceil(d);b+=jb}if(!(D&1))b=c.min(r-u,c.max(b,0));var e=c.abs(b-d);e=1-c.pow(1-e,5);if(!P&&qb)z.we(Ib);else if(d==b){tb.xe();tb.kc()}else z.Cb(d,b,e*Vb)}}function Hb(a){!b.g(b.Ob(a),"nodrag")&&b.Ab(a)}function rc(a){Yb(a,1)}function Yb(a,c){a=b.yc(a);var i=b.Ob(a);if(!M&&!b.g(i,"nodrag")&&sc()&&(!c||a.touches.length==1)){C=e;yb=k;R=h;b.a(g,c?"touchmove":"mousemove",Bb);b.H();P=0;gc();if(!qb)x=0;if(c){var f=a.touches[0];ub=f.clientX;vb=f.clientY}else{var d=b.qc(a);ub=d.x;vb=d.y}H=0;hb=0;jb=0;o.i(j.fe,t(G),G,a)}}function Bb(d){if(C){d=b.yc(d);var f;if(d.type!="mousemove"){var l=d.touches[0];f={x:l.clientX,y:l.clientY}}else f=b.qc(d);if(f){var j=f.x-ub,k=f.y-vb;if(c.floor(G)!=G)x=x||fb&M;if((j||k)&&!x){if(M==3)if(c.abs(k)>c.abs(j))x=2;else x=1;else x=M;if(ob&&x==1&&c.abs(k)-c.abs(j)>3)yb=e}if(x){var a=k,i=Ab;if(x==1){a=j;i=zb}if(!(D&1)){if(a>0){var g=i*s,h=a-g;if(h>0)a=g+c.sqrt(h)*5}if(a<0){var g=i*(r-u-s),h=-a-g;if(h>0)a=-g-c.sqrt(h)*5}}if(H-hb<-2)jb=0;else if(H-hb>2)jb=-1;hb=H;H=a;sb=G-H/i/(Y||1);if(H&&x&&!yb){b.Ab(d);if(!O)z.Pe(sb);else z.Ne(sb)}}}}}function bb(){qc();if(C){C=k;b.H();b.D(g,"mousemove",Bb);b.D(g,"touchmove",Bb);P=H;z.eb();var a=w.S();o.i(j.ee,t(a),a,t(G),G);E&12&&Pb();ec(e)}}function jc(c){if(P){b.Oe(c);var a=b.Ob(c);while(a&&v!==a){a.tagName=="A"&&b.Ab(c);try{a=a.parentNode}catch(d){break}}}}function Jb(a){A[s];s=t(a);tb=A[s];Tb(a);return s}function Dc(a,b){x=0;Jb(a);o.i(j.Se,t(a),b)}function Tb(a,c){wb=a;b.f(S,function(b){b.ic(t(a),a,c)})}function sc(){var b=j.Qc||0,a=X;if(ob)a&1&&(a&=1);j.Qc|=a;return M=a&~b}function qc(){if(M){j.Qc&=~X;M=0}}function Xb(){var a=b.Eb();b.K(a,V);b.u(a,"absolute");return a}function t(a){return(a%r+r)%r}function kc(b,d){if(d)if(!D){b=c.min(c.max(b+wb,0),r-u);d=k}else if(D&2){b=t(b+wb);d=k}cb(b,a.zb,d)}function xb(){b.f(S,function(a){a.jc(a.Bb.Ye<=F)})}function hc(){if(!F){F=1;xb();if(!C){E&12&&ec();E&3&&A[s]&&A[s].kc()}}}function Ec(){if(F){F=0;xb();C||!(E&12)||gc()}}function ic(){V={vb:L,Lb:K,j:0,k:0};b.f(T,function(a){b.K(a,V);b.u(a,"absolute");b.xb(a,"hidden");b.L(a)});b.K(gb,V)}function ab(b,a){cb(b,a,e)}function cb(g,f,l){if(Rb&&(!C&&(F||!(E&12))||a.Nc)){O=e;C=k;z.eb();if(f==i)f=Vb;var d=Cb.ib(),b=g;if(l){b=d+g;if(g>0)b=c.ceil(b);else b=c.floor(b)}if(D&2)b=t(b);if(!(D&1))b=c.max(0,c.min(b,r-u));var j=(b-d)%r;b=d+j;var h=d==b?0:f*c.abs(j);h=c.min(h,f*u*1.5);z.Cb(d,b,h||1)}}o.rc=function(){if(!I){I=e;A[s]&&A[s].kc()}};function W(){return b.l(y||q)}function nb(){return b.m(y||q)}o.M=W;o.cb=nb;function Eb(c,d){if(c==i)return b.l(q);if(!y){var a=b.Eb(g);b.Kc(a,b.Kc(q));b.Kb(a,b.Kb(q));b.T(a,"block");b.u(a,"relative");b.F(a,0);b.C(a,0);b.xb(a,"visible");y=b.Eb(g);b.u(y,"absolute");b.F(y,0);b.C(y,0);b.l(y,b.l(q));b.m(y,b.m(q));b.Ec(y,"0 0");b.I(y,a);var h=b.Fb(q);b.I(q,y);b.U(q,"backgroundImage","");b.f(h,function(c){b.I(b.g(c,"noscale")?q:a,c);b.g(c,"autocenter")&&Lb.push(c)})}Y=c/(d?b.m:b.l)(y);b.Ae(y,Y);var f=d?Y*W():c,e=d?c:Y*nb();b.l(q,f);b.m(q,e);b.f(Lb,function(a){var c=b.Nd(b.g(a,"autocenter"));b.Kd(a,c)})}o.qd=Eb;m.call(o);o.ab=q=b.jb(q);var a=b.V({ub:0,Ge:1,mc:1,gc:0,hc:k,tb:1,pb:e,Nc:e,fd:1,Xc:3e3,nd:1,zb:500,ed:d.od,Tc:20,Zc:0,rb:1,Yc:0,Dd:1,nc:1,bd:1},fc);a.pb=a.pb&&b.qe();if(a.vd!=i)a.Xc=a.vd;if(a.yd!=i)a.Yc=a.yd;var fb=a.nc&3,tc=(a.nc&4)/-4||1,mb=a.bf,J=b.V({R:p,pb:a.pb},a.af);J.Nb=J.Nb||J.Xe;var Fb=a.zd,Z=a.ud,eb=a.We,Q=!a.Dd,y,v=b.B(q,"slides",Q),gb=b.B(q,"loading",Q)||b.Eb(g),Nb=b.B(q,"navigator",Q),dc=b.B(q,"arrowleft",Q),ac=b.B(q,"arrowright",Q),Mb=b.B(q,"thumbnavigator",Q),pc=b.l(v),nc=b.m(v),V,T=[],uc=b.Fb(v);b.f(uc,function(a){a.tagName=="DIV"&&!b.g(a,"u")&&T.push(a);b.A(a,(b.A(a)||0)+1)});var s=-1,wb,tb,r=T.length,L=a.Hd||pc,K=a.Zd||nc,Wb=a.Zc,zb=L+Wb,Ab=K+Wb,bc=fb&1?zb:Ab,u=c.min(a.rb,r),lb,x,M,yb,S=[],Qb,Sb,Ob,cc,Cc,I,E=a.nd,lc=a.Xc,Vb=a.zb,rb,ib,kb,Rb=u<r,D=Rb?a.tb:0,X,P,F=1,O,C,R,ub=0,vb=0,H,hb,jb,Cb,w,U,z,Ub=new oc,Y,Lb=[];if(r){if(a.pb)Kb=function(a,c,d){b.kb(a,{W:c,Z:d})};I=a.hc;o.Bb=fc;ic();b.q(q,"jssor-slider",e);b.A(v,b.A(v)||0);b.u(v,"absolute");lb=b.sb(v,e);b.Ib(lb,v);if(mb){cc=mb.Ve;rb=mb.R;ib=u==1&&r>1&&rb&&(!b.cd()||b.ld()>=8)}kb=ib||u>=r||!(D&1)?0:a.Yc;X=(u>1||kb?fb:-1)&a.bd;var Gb=v,A=[],B,N,Db=b.ye(),ob=Db.Ue,G,qb,Ib,sb;Db.Wc&&b.U(Gb,Db.Wc,([h,"pan-y","pan-x","none"])[X]||"");U=new zc;if(ib)B=new rb(Ub,L,K,mb,ob);b.I(lb,U.Qb);b.xb(v,"hidden");N=Xb();b.U(N,"backgroundColor","#000");b.ac(N,0);b.Ib(N,Gb.firstChild,Gb);for(var db=0;db<T.length;db++){var wc=T[db],yc=new xc(wc,db);A.push(yc)}b.L(gb);Cb=new Ac;z=new mc(Cb,U);b.a(v,"click",jc,e);b.a(q,"mouseout",b.Vb(hc,q));b.a(q,"mouseover",b.Vb(Ec,q));if(X){b.a(v,"mousedown",Yb);b.a(v,"touchstart",rc);b.a(v,"dragstart",Hb);b.a(v,"selectstart",Hb);b.a(g,"mouseup",bb);b.a(g,"touchend",bb);b.a(g,"touchcancel",bb);b.a(f,"blur",bb)}E&=ob?10:5;if(Nb&&Fb){Qb=new Fb.R(Nb,Fb,W(),nb());S.push(Qb)}if(Z&&dc&&ac){Z.tb=D;Z.rb=u;Sb=new Z.R(dc,ac,Z,W(),nb());S.push(Sb)}if(Mb&&eb){eb.gc=a.gc;Ob=new eb.R(Mb,eb);S.push(Ob)}b.f(S,function(a){a.lc(r,A,gb);a.hb(n.oc,kc)});b.U(q,"visibility","visible");Eb(W());xb();a.mc&&b.a(g,"keydown",function(b){if(b.keyCode==37)ab(-a.mc);else b.keyCode==39&&ab(a.mc)});var pb=a.gc;if(!(D&1))pb=c.max(0,c.min(pb,r-u));z.Cb(pb,pb,0)}};j.ae=21;j.fe=22;j.ee=23;j.he=24;j.Re=25;j.pd=26;j.Le=27;j.ge=28;j.pe=202;j.Se=203;j.ce=206;j.je=207;j.ie=208;j.vc=209;var n={oc:1},q=function(d,C){var f=this;m.call(f);d=b.jb(d);var s,A,z,r,l=0,a,o,j,w,x,i,g,q,p,B=[],y=[];function v(a){a!=-1&&y[a].Ud(a==l)}function t(a){f.i(n.oc,a*o)}f.ab=d;f.ic=function(a){if(a!=r){var d=l,b=c.floor(a/o);l=b;r=a;v(d);v(b)}};f.jc=function(a){b.J(d,a)};var u;f.lc=function(D){if(!u){s=c.ceil(D/o);l=0;var n=q+w,r=p+x,m=c.ceil(s/j)-1;A=q+n*(!i?m:j-1);z=p+r*(i?m:j-1);b.l(d,A);b.m(d,z);for(var f=0;f<s;f++){var C=b.wd();b.Me(C,f+1);var k=b.Sd(g,"numbertemplate",C,e);b.u(k,"absolute");var v=f%(m+1);b.C(k,!i?n*v:f%j*n);b.F(k,i?r*v:c.floor(f/(m+1))*r);b.I(d,k);B[f]=k;a.pc&1&&b.a(k,"click",b.G(h,t,f));a.pc&2&&b.a(k,"mouseover",b.Vb(b.G(h,t,f),k));y[f]=b.cc(k)}u=e}};f.Bb=a=b.V({Fc:10,tc:10,Gc:1,pc:1},C);g=b.B(d,"prototype");q=b.l(g);p=b.m(g);b.Hb(g,d);o=a.Hc||1;j=a.Xd||1;w=a.Fc;x=a.tc;i=a.Gc-1;a.Zb==k&&b.q(d,"noscale",e);a.gb&&b.q(d,"autocenter",a.gb)},r=function(a,g,i){var c=this;m.call(c);var r,d,f,j;b.l(a);b.m(a);var p,o;function l(a){c.i(n.oc,a,e)}function t(c){b.J(a,c);b.J(g,c)}function s(){p.Mb(i.tb||d>0);o.Mb(i.tb||d<r-i.rb)}c.ic=function(b,a,c){if(c)d=a;else{d=b;s()}};c.jc=t;var q;c.lc=function(c){r=c;d=0;if(!q){b.a(a,"click",b.G(h,l,-j));b.a(g,"click",b.G(h,l,j));p=b.cc(a);o=b.cc(g);q=e}};c.Bb=f=b.V({Hc:1},i);j=f.Hc;if(f.Zb==k){b.q(a,"noscale",e);b.q(g,"noscale",e)}if(f.gb){b.q(a,"autocenter",f.gb);b.q(g,"autocenter",f.gb)}};function p(e,d,c){var a=this;l.call(a,0,c);a.gd=b.Jc;a.xc=0;a.Ac=c}jssor_1_slider_init=function(){var h={hc:e,zb:800,ed:d.Md,ud:{R:r},zd:{R:q}},g=new j("jssor_1",h);function a(){var b=g.ab.parentNode.clientWidth;if(b){b=c.min(b,1920);g.qd(b)}else f.setTimeout(a,30)}a();b.a(f,"load",a);b.a(f,"resize",a);b.a(f,"orientationchange",a)}})(window,document,Math,null,true,false)
+</script>
+<style>
+.jssorb05{position:absolute}.jssorb05 div,.jssorb05 div:hover,.jssorb05 .av{position:absolute;width:16px;height:16px;background:url('img/b05.png') no-repeat;overflow:hidden;cursor:pointer}.jssorb05 div{background-position:-7px -7px}.jssorb05 div:hover,.jssorb05 .av:hover{background-position:-37px -7px}.jssorb05 .av{background-position:-67px -7px}.jssorb05 .dn,.jssorb05 .dn:hover{background-position:-97px -7px}.jssora22l,.jssora22r{display:block;position:absolute;width:40px;height:58px;cursor:pointer;background:url('img/a22.png') center center no-repeat;overflow:hidden}.jssora22l{background-position:-10px -31px}.jssora22r{background-position:-70px -31px}.jssora22l:hover{background-position:-130px -31px}.jssora22r:hover{background-position:-190px -31px}.jssora22l.jssora22ldn{background-position:-250px -31px}.jssora22r.jssora22rdn{background-position:-310px -31px}.jssora22l.jssora22lds{background-position:-10px -31px;opacity:.3;pointer-events:none}.jssora22r.jssora22rds{background-position:-70px -31px;opacity:.3;pointer-events:none}
+</style>
+<!DOCTYPE html>
+ 
+
+
+<html>
+<head>
+<title>:: JSP Page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link href="layout/styles/tableinfo.css" rel="stylesheet" type="text/css" media="all">
+<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- this file for demo -->
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	
+	<!-- Copy & paste -->
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css " />
+	<link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.min.css " />
+	<link rel="stylesheet" type="text/css" href="css/tabs.css" />
+	
+	<!-- this is for choose your color -->
+	<link rel="stylesheet" type="text/css" href="css/colors/color_1.css" id="colors-style" />
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900|Dosis:300,400,700|Oswald:300">
+
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	
+	<style>
+#mainav .drop::after, #mainav li li .drop::after, #breadcrumb li a::after, .sidebar nav a::after {
+    position: relative;
+    font-family: "FontAwesome";
+    line-height: 10px;
+    top: 0px; 
+    font-weight: bold;
+    font-size: 12px;
+    
+}
+</style>
+</head>
+
+<body id="top">
+
+
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="f1">
+<div class="wrapper row0">
+  <div id="topbar" class="clear"> 
+    <!-- ################################################################################################ -->
+    <nav>
+      <ul style="font-size: .8em!important;" >
+      <li><a href="https://yantroutsav.firebaseapp.com" target="_blank">YantroUtsav2k19</a></li>
+      <li><a href="attendance/Attendance.html" target="_blank">Online Attendance</a></li>
+      <li><a href="http://coemlive.online" target="_blank">Online Radio</a></li>
+        <li><a href="examination">EXAMINATION CIRCULARS</a></li>
+        <li><a href="alumini/aluminilogin.jsp">ALUMNI</a></li>
+        <li><a href="#">CAREERS</a></li>
+        <li><a class="drop" href="login.jsp">LOGIN</a></li>
+        
+      </ul>
+    </nav>
+    <!-- ################################################################################################ --> 
+  </div>
+</div>
+
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+
+<div class="wrapper row1">
+    <div id="flogo">
+    	<img src="images/logon.jpg"/>	
+    </div>
+  	<div id="llogo">
+    	<img src="images/l3.png"/>	
+    </div>
+    <div id="mtext">	
+      <p id="tophead">PUNE DISTRICT EDUCATION ASSOCIATION'S</p>
+      <p id="middlehead">COLLEGE OF ENGINEERING</p>
+      <p id="bottomhead" style="margin-bottom: 5px;">Manjari (BK), Pune - 412307 (Maharashtra) India</p>
+      <p id="bbhead" style="color: #e94b01; font-size: 15px;font-weight: bold;">**NAAC Accredited**</p>
+      <p id="bbhead">Approved by AICTE, New Delhi No. 740-89-316 E/ET/98 (Year of Establishment - 1998)</p>
+      <p id="bbhead">Affiliated to Savitribai Phule Pune University, Pune | DTE Code: 6206 | Pune Uni. Code: 4026(Engg.) 1223(MBA)</p>
+  	</div>
+    <!-- ################################################################################################ --> 
+</div>
+
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+
+<div class="wrapper row2">
+
+<div class="rounded1">
+
+<nav id="mainav" class="clear"> 
+
+      <!-- ################################################################################################ -->
+
+      <ul class="clear">
+
+        <li><a href="HomePage">HOME</a></li>
+
+         <li><a class="drop" href="#">ABOUT US</a>
+
+          <ul>
+			<li><a href='visionmission.jsp'>Vision &amp; Mission</a></li>
+			<li><a href='aboutpdea.jsp'>About PDEA</a></li>
+			<li><a href='chairman.jsp'>President's Message</a></li>
+			<li><a href='principal.jsp'>Principal's Message</a></li>
+			<li><a href='infrastructure.jsp'>Infrastructure</a></li>
+			<li><a href='manddis'>Mandatory Disclosure</a></li>
+			<li><a href='profrssionalInstitues.jsp'>Professional Institutes</a></li>
+			
+          </ul>
+
+        </li>
+        <li><a class="drop">ACADEMICS</a>
+          <ul>
+            <li><a href="academics">Academics</a></li>
+            <li><a class="drop" href="#">Departments</a>
+            <ul>
+                <li><a href="fedept">First Year Engineering</a></li>
+			    <li><a href="mechdept">Mechanical Engineering</a></li>
+			    <li><a href="compdept">Computer Engineering</a></li>
+			    <li><a href="elexdept">Electronics and Telecommunication Engineering</a></li>
+			    <li><a href="icdept">Instrumentation and Control</a></li>
+			    <li><a href="itdept">Information Technology</a></li>
+			    <li><a href="mbadept" id="smallCourse">M. B. A</a></li>
+              </ul>
+            </li>
+            <li><a class="drop" href="#">E- Learning</a>
+            <ul>
+                <li><a href="http://nptel.unipune.ac.in/LocalG/" target="_blank">NPTEL SPPU</a></li>
+			    <li><a href="https://nptel.ac.in/course.php" target="_blank">NPTEL Website </a></li>
+			    <li><a href="http://www.unipune.ac.in/administration_files/publication.htm" target="_blank">Audio/Video Program</a></li>
+			    <li><a href="http://www.unipune.ac.in/university_files/e-Books.htm" target="_blank">Ebooks </a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+		<li><a href='admissions'>ADMISSIONS</a></li>
+		<li><a href='trainingplacement'>Training & Placement CELL</a></li>
+		<li><a class="drop" href="#">RESEARCH</a>
+          <ul>
+			<li><a class="drop" href="#">Research Project</a>
+            <ul>
+                <li><a href="ongoingproject.jsp">Ongoing Project</a></li>
+<!-- 			    <li><a href="completedproject.jsp">Completed Project</a></li> -->
+              </ul>
+            </li>
+<!-- 			<li><a href='consultancyproject.jsp'>Consultancy Project</a></li> -->
+<!-- 			<li><a class="drop" href="#">Publication</a> -->
+<!--             <ul> -->
+<!--                 <li><a href="staffpublication.jsp">Publication of Staff</a></li> -->
+<!-- 			    <li><a href="studentpublication.jsp">Publication of Student</a></li> -->
+<!--               </ul> -->
+<!--             </li> -->
+          </ul>
+        </li>
+		<li><a href="publicgallery">GALLERY</a></li>
+		<li><a href='scholarships'>SCHOLARSHIP</a></li>
+		<li><a class="drop" href="#">IQAC & NAAC</a>
+          <ul>
+          <li><a href="IQACDetails?type=IQACCommittee">IQAC</a>
+            </li>
+			<li><a class="drop" href="#">OLD IQAC</a>
+            <ul>
+                <li><a href="IqacSrv">IQAC</a></li>
+                 <li><a href="https://pdeacoem.s3.us-east-2.amazonaws.com/IqcDoc/Central+Portfolio-2018-19.pdf" target="_blank">Central Portfolio 2018-19</a></li>
+                  <li><a href="https://pdeacoem.s3.us-east-2.amazonaws.com/IqcDoc/Students+Satisfaction+Survey+%26+Its+Result+2017-18.pdf" target="_blank">Student Satisfaction Survey Form</a></li>
+                   <li><a href="https://pdeacoem.s3.us-east-2.amazonaws.com/IqcDoc/7.15+Code+of+Conduct.pdf" target="_blank">Code of Conduct</a></li>
+                    <li><a href="https://pdeacoem.s3.us-east-2.amazonaws.com/IqcDoc/CO+PO+PSO+PEO_all_dept.pdf" target="_blank">CO PO PSO PEO</a></li>
+                     <li><a href="https://pdeacoem.s3.us-east-2.amazonaws.com/IqcDoc/Support+%26+Maintanance+Mechanism.pdf" target="_blank">Support and Maintenance Mechanism</a></li>
+			   
+              </ul>
+            </li>
+
+			<li><a href='https://pdeacoem.s3.us-east-2.amazonaws.com/aishse/aishsedoc.pdf' target="_blank">AISHE Report</a></li>
+			<li><a class="drop" href="#">Best Practices</a>
+            <ul>
+                <li><a href="https://pdeacoem.s3.us-east-2.amazonaws.com/Best-Practices/Cri+7_7.2.1_SSR_Best+practise+1+Roboclub.pdf">ROBO CLUB</a></li>
+                 <li><a href="https://pdeacoem.s3.us-east-2.amazonaws.com/Best-Practices/Cri+7_7.2.1_2+SSR_Best+Practice+2+-ED+Center.pdf" target="_blank">ED Center</a></li>
+                 
+                   
+			   
+              </ul>
+            </li>
+          </ul>
+        </li>
+		<li><a class="drop" href="#">HOSTEL</a>
+          <ul>
+			<li><a href='boyshostel.jsp'>Boys Hostel</a></li>
+			<li><a href='girlshostel.jsp'>Girls Hostel</a></li>
+          </ul>
+        </li>
+		
+		
+		<!-- 
+		<li><a class="drop" href="#">IQAC & NAAC</a>
+          <ul>
+             <li><a href="IqacSrv">IQAC</a></li>
+			<li><a href='https://s3.us-east-2.amazonaws.com/pdeacoemnew/naac/naacssr.pdf' target="_blank">NAAC SSR</a></li>
+			<li><a href='https://s3.us-east-2.amazonaws.com/pdeacoemnew/aishse/aishsedoc.pdf' target="_blank">AISHE Report</a></li>
+          </ul>
+        </li> -->
+        <li><a href='resources.jsp'>RESOURCES</a></li>
+      </ul>
+
+      <!-- ################################################################################################ --> 
+
+    </nav>
+    </div>
+
+
+</div>
+</div>
+<!-- JAVASCRIPTS --> 
+<script src="layout/scripts/jquery.min.js"></script> 
+<script src="layout/scripts/jquery.fitvids.min.js"></script> 
+<script src="layout/scripts/jquery.mobilemenu.js"></script> 
+<script src="layout/scripts/tabslet/jquery.tabslet.min.js"></script>
+<!-- this file for demo -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
+	
+	<!-- Copy & paste -->
+	<script type="text/javascript" src="js/easyResponsiveTabs.js"></script>
+	<script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+	<script type="text/javascript" src="js/tabs.js"></script>
+	
+</body>
+</html>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div id="fixed">
+       <div class="container">
+	      <div class="row" style="padding: 10px;">
+			<div class="col-md-8" >
+			 <div class="wrapper">
+				<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:570px;overflow:hidden;visibility:hidden;">
+				<!-- Loading Screen -->
+				<div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+				<div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+				<div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+				</div>
+				<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:570px;overflow:hidden;">
+				<div>
+				<img data-u="image" src="images/demo/slider/1.png"/>
+				<div class="slidertext">College Building</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/2.png"/>
+				<div class="slidertext">College Building with Lawn</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/3.jpg"/>
+				<div class="slidertext">Inauguration of College Magazine "Sparkel" by PDEA's President Hon. Ajitdada Pawar and other guest honor</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/4.jpg"/>
+				<div class="slidertext">Felicitation of Hon. Sunetratai Pawar, Life Member, PDEA by Dr. R. V. Patil, Principal</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/5.JPG"/>
+				<div class="slidertext">Proceeding Publication of "Futurizm 2018" by Chief Guest Dr. L.V.Patil, BoS, SPPU, Pune and other guest honour.</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/6.png"/>
+				<div class="slidertext">Graduation Ceremony of Savitribai Phule Pune University</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/7.JPG"/>
+				<div class="slidertext">Felicitation of Dr.Pramod Patil, BoS, SPPU, Pune by Dr.R.V.Patil, Principal</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/8.jpg"/>
+				<div class="slidertext">NSS Camp Dip Prajawalan by Hon.L.M.Pawar, Vice Secretary, PDEA, Pune</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/9.png"/>
+				<div class="slidertext">Felicitation of Robotics Team by Adv. Sandip Kadam, Honorary Secretary, PDEA, Pune and other guest honour.</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/10.png"/>
+				<div class="slidertext">Felicitation of Hon. Rahul Solapurkar, Actor by Adv. Sandip Kadam, Honorary Secretary, PDEA, Pune</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/11.JPG"/>
+				<div class="slidertext">Rajmata Jijavu and Swami Vivekanand Jayanti Celebration , Honorary Guests</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/12.jpg"/>
+				<div class="slidertext">Annual Social Gathering "Confluence-2017", Honorary guests and Student Representative</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/13.jpg"/>
+				<div class="slidertext">NSS Camp Volunteers with Honorary Guests and other staff</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/14.jpg"/>
+				<div class="slidertext">Great Bhet of Hon. Sindhutai Sapkal, Social Worker by Dr. R.V.Patil, Principal and other staff, student</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/15.png"/>
+				<div class="slidertext">Traffic Awareness Guidance by Hadapsar Police Inspector Shri. Jagannath Kalaskar with Dr. R.V.Patil, Principal and other staff</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/16.png"/>
+				<div class="slidertext">Knowledge Center, PDEA's College of Engineering, Manjari Bk., Pune</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/17.jpg"/>
+				<div class="slidertext">Project Done by Mechanical Engineering Student</div>
+				</div>
+				<div>
+				<img data-u="image" src="images/demo/slider/18.jpg"/>
+				<div class="slidertext">Workshop Session</div>
+				</div>
+				
+				</div>
+				<!-- Bullet Navigator -->
+				<div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+				<!-- bullet navigator item prototype -->
+				<div data-u="prototype" style="width:16px;height:16px;"></div>
+				</div>
+				<!-- Arrow Navigator -->
+				<span data-u="arrowleft" class="jssora22l" style="top:0px;left:8px;width:40px;height:58px;" data-autocenter="2"></span>
+				<span data-u="arrowright" class="jssora22r" style="top:0px;right:8px;width:40px;height:58px;" data-autocenter="2"></span>
+				</div>
+				<script type="text/javascript">jssor_1_slider_init();</script>
+				<!-- #endregion Jssor Slider End -->
+				
+				</div>
+			</div>
+			<div class="col-md-4" >
+			      <h2 style="font-weight: bold;color:#FF851B;font-size: 20px;border-bottom: 1px solid #6ea61b;">President's Message</h2>
+			       <div class="row" >
+			        <div class="col-md-9" >
+			         <p style="text-align: justify;color:#001f3f;">Our vision is based on hard work, open communication, a strong emphasis on team work and a high level of responsibility. This visionary culture allows and emphasizes our wards not only to adopt the present...</p>
+		             <p class="right"><a href="chairman.jsp">Read More &raquo;</a></p>
+			        </div>
+			        <div class="col-md-3" >
+			        <img src="images/demo/chairman.jpg" style="height: 110px;width:148 "/>
+			        </div>
+			       </div>
+			       <h2 style="font-weight: bold;color:#FF851B;font-size: 20px;border-bottom: 1px solid #6ea61b;">Principal Message</h2>
+		          <div class="row">
+		             <div class="col-md-3" >
+			        <img src="images/demo/coem_prici.png" style="height: 110px;width:148 "/>
+			        </div>
+			        <div class="col-md-9" >
+			        <p style="text-align: justify;color:#001f3f;">It is my immense pleasure to welcome you to the creative world of Engineering. PDEA's College of Engineering, Manjari (Bk) at Pune, is a prominent engineering education center, located in the heart ...</p>
+		             <p class="right"><a href="principal.jsp">Read More &raquo;</a></p>
+			        </div>
+			        
+			      </div>
+			</div>
+		 </div>
+	  </div>  
+
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <div class="rounded">
+    <main class="container clear"> 
+      <!-- main body --> 
+      <!-- ################################################################################################ -->
+      <div class="group btmspace-30"> 
+        <!-- Left Column -->
+        <div class="one_quarter first" style="height: 475px;"> 
+          <!-- ################################################################################################ -->
+          <ul class="nospace">
+			<li>
+			<p style="font-size: 20px; margin-top: 0px;padding-top: 0px;color:#FF851B;border-bottom: 1px solid #6ea61b;padding-bottom: 10px;">Latest News</p>
+ 			<marquee direction="up"  onmouseover="this.stop();" onmouseout="this.start();" height="250" scrollamount="3" style="border-bottom: 1px solid #6ea61b;margin-top: 0px;">
+				<ul class="nospace listing" id="myNews">
+				</ul>
+			</marquee>
+			<!-- <div class="marquee-parent" style="border-bottom: 1px solid #7ea9f3;border-top: 1px solid #7ea9f3;margin-top: 0px;">
+  				<div class="marquee-child" id="myNews">
+    				
+  				</div>
+			</div> -->
+			</li>
+			<li>
+			<br/>
+			<p style="font-size: 20px;color:#FF851B;border-bottom: 1px solid #6ea61b;padding-bottom: 10px;">Latest Events</p>
+ 			<marquee direction="up"  onmouseover="this.stop();" onmouseout="this.start();" height="250" scrollamount="3" style="border-bottom: 1px solid #6ea61b;margin-top: 0px">
+				<ul class="nospace listing" id="myEvents">
+				</ul>
+			</marquee>
+			<!-- <div class="marquee-parent" style="border-bottom: 1px solid #7ea9f3;border-top: 1px solid #7ea9f3;margin-top: 0px;">
+				<div class="marquee-child" id="myEvents">
+    				
+  				</div>
+			</div> -->
+			</li>
+			
+		</ul>
+          <!-- ################################################################################################ --> 
+        </div>
+        <!-- / Left Column --> 
+        <!-- Middle Column -->
+        <div class="one_half" > 
+          <!-- ################################################################################################ -->
+          <h2 style="font-weight: bolder;color: #FF851B;font-size: 20px;border-bottom: 1px solid #6ea61b;padding-bottom: 10px;">About US</h2>
+          <p style="text-align: justify;color: #001f3f;"><span style="font-weight: bold;">	
+         PDEA's College of Engineering, Manjari(Bk.)</span> was established by Pune District Education Association 
+         in the year 1998 with a vision to spread engineering knowledge in the rural area. The Institution affiliated
+          by Savitribai Phule Pune University. Today the Institute is recognised as one of the centres of academic
+           excellence in the city.</p>
+           
+		  <p style="text-align: justify;color: #001f3f;">Over the years, there has been dynamic progress at C.O.E. Manjari in
+		   all academic and research activities, and a parallel improvement in facilities and infrastructure, to keep 
+		   it on par with the best institutions in Maharashtra. Institutes in positions of excellence grow with time.
+		    The ideas and ideals on which such institutes are built evolve and change with national aspirations,
+		   national perspectives, and trends world - wide. C.O.E., Manjari , too, is one such institution.</p>
+		    
+		    
+		    
+		    
+		    <div class="row" style="padding: 10px;background: #FF851B;">
+				
+				   <div class="col-md-6"  style="height: 130px; color: white;">
+				   <p style="text-align: center;padding: 20px;">
+						 <span style="font-weight: bold;font-size: 22px;padding: 10px;border-bottom: 5px dotted #9aff05;text-align: center;">50000 <span style="font-size: 30px;font-weight: bold;">+</span></span><br><br>
+						       Enginners Passed
+						   </p>
+				
+				</div>
+				
+				   <div class="col-md-6"  style="height: 130px; color: white;">
+				   <p style="text-align: center;padding: 20px;">
+						 <span style="font-weight: bold;font-size: 22px;padding: 10px;border-bottom: 5px dotted #9aff05;text-align: center;">5000 <span style="font-size: 30px;font-weight: bold;">+</span></span><br><br>
+						       Campus Placed Students
+						   </p>
+				
+				</div>
+				
+				   <div class="col-md-6"  style="height: 130px; color: white;">
+				   <p style="text-align: center;padding: 20px;">
+						 <span style="font-weight: bold;font-size: 22px;padding: 10px;border-bottom: 5px dotted #9aff05;text-align: center;">196 <span style="font-size: 30px;font-weight: bold;">+</span></span><br><br>
+						       Fuclties
+						   </p>
+				
+				</div>
+				
+				   <div class="col-md-6"  style="height: 130px; color: white;">
+				   <p style="text-align: center;padding: 20px;">
+						 <span style="font-weight: bold;font-size: 22px;padding: 10px;border-bottom: 5px dotted #9aff05;text-align: center;">36 <span style="font-size: 30px;font-weight: bold;">+</span></span><br><br>
+						       Years Of Experience
+						   </p>
+				
+				</div>
+				
+				</div>
+				
+<!-- 				<div class="col-md-6" style="height: 130px; color: white;"> -->
+<!-- 					<p style="text-align: center;padding: 20px;"> -->
+<!-- 						 <span style="font-weight: bold;font-size: 22px;padding: 10px;border-bottom: 5px dotted #FF851B;text-align: center;" >5000 <span style="font-size: 30px;font-weight: bold;">+</span></span><br><br> -->
+<!-- 						       Campus Placed Students -->
+<!-- 						   </p> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<div class="row" style="padding: 10px; background: #202020;"> -->
+<!-- 				<div class="col-md-6" style="height: 130px; color: white;"> -->
+<!-- 					<p style="text-align: center;padding: 20px;"> -->
+<!-- 						 <span style="font-weight: bold;font-size: 22px;padding: 10px;border-bottom: 5px dotted #FF851B;text-align: center;">190 <span style="font-size: 30px;font-weight: bold;">+</span></span><br><br> -->
+<!-- 						       Fuclties -->
+<!-- 						   </p> -->
+<!-- 				</div> -->
+<!-- 				<div class="col-md-6" style="height: 130px; color: white;"> -->
+<!-- 						<p style="text-align: center;padding: 20px;"> -->
+<!-- 						 <span style="font-weight: bold;font-size: 22px;padding: 10px;border-bottom: 5px dotted #FF851B;text-align: center;">36 <span style="font-size: 30px;font-weight: bold;">+</span></span><br><br> -->
+<!-- 						       Years Of Experience -->
+<!-- 						   </p> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+		    
+              
+          
+          <!-- ################################################################################################ --> 
+        </div>
+        
+        <!-- / Middle Column --> 
+        <!-- Right Column -->
+        <div class="one_quarter sidebar"> 
+          <!-- ################################################################################################ -->
+          <div class="sdb_holder">
+            <h6 style="color:#FF851B;font-size: 20px;border-bottom: 1px solid #6ea61b;padding-bottom: 10px;">Virtual Tour</h6>
+            
+            
+            <video style="width: 100%;height: auto;" id="vtour" allowfullscreen="true" controls="controls" autoplay="autoplay">
+            	<source src="">
+            	Your browser does not support the video tag.
+            </video>
+            
+            <p style="margin-top: 10px"><a href="#">Take a glance at our Campus </a></p>
+          </div>
+          <div class="sdb_holder" style="margin-top: 3px">
+            <h6 style="color:#000000;font-weight: bold;color:#FF851B;font-size: 20px;border-bottom: 1px solid #6ea61b;padding-bottom: 10px;">Quick Information Link</h6>
+            <ul class="nospace quickinfo" id="loadhd">
+              	
+              	<li class="clear"><a href="#"  id="link1" target="_blank"><img src="images/Download1.ico" alt=""><span id="span1"></span></a></li>
+              	<li class="clear"><a href="#" target="_blank" id="link2"><img src="images/Download1.ico" alt=""><span id="span2"></span></a></li>
+            </ul>
+          </div>
+          
+          <!-- ################################################################################################ --> 
+        </div>
+        <!-- / Right Column --> 
+      </div><br><br>
+      <!-- ################################################################################################ --> 
+      <!-- ################################################################################################ -->
+      
+      <!-- ################################################################################################ --> 
+      <!-- ################################################################################################ -->
+       <div class="group">
+      <center>
+      <p style="background-color: black;text-align:center;color: white;font-size: larger;">Accreditation & Approvals</p>
+      	<div style="margin-bottom: 30px">
+     
+      			<img src="images/commities/NAAC.png">
+                <img src="images/commities/AICTE.png">
+                <img src="images/commities/DTE.png">
+      		    <img src="images/commities/NBA.png"> 
+      		    <img src="images/commities/SPPU.png">
+      		    <img src="images/commities/UGC.png">
+      		   
+      	</center>
+      </div>
+      	
+      <div class="group">
+      <center><p style="background-color: black;text-align:center;color: white;font-size: larger;">Our Recruiters</p>
+      	<div style="margin-bottom: 30px">
+      	
+      		
+      		<img src="images/recruiters/1.jpg">
+      		<img src="images/recruiters/2.jpg">
+      		<img src="images/recruiters/3.jpg">
+      		<img src="images/recruiters/4.jpg">
+      		<img src="images/recruiters/13.jpg">
+      		<img src="images/recruiters/5.jpg">
+      		<img src="images/recruiters/6.jpg">
+      		<img src="images/recruiters/7.jpg">
+      		<img src="images/recruiters/8.jpg">
+      		<img src="images/recruiters/9.jpg">
+      		<img src="images/recruiters/10.jpg">
+      		<img src="images/recruiters/11.jpg">
+      		<img src="images/recruiters/12.jpg">
+      		
+      <a href="placementcell.jsp" >More &raquo;
+   </a>  
+   </center>    
+      	</div>
+      	
+        
+		
+		
+      </div>
+     
+      
+      </div>
+   
+  </div>
+<div class="wrapper row3" style="margin-top: 0px;padding-top: 0px;">
+  <div class="rounded" style="margin-top: 0px;">
+    <main class="container clear" style="margin-top: 0px;padding-top: 0px;border-bottom: 1px solid #6ea61b;padding-bottom: 10px;"> 
+  				
+  		<div id="gallery1">
+  		<figure>
+        	<header class="heading" style="color:#4C0000;font-size: 20px;border-bottom: 1px solid #6ea61b;padding-bottom: 10px;">News Paper Gallery</header>
+        	<marquee direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+    		<div class="highslide-gallery" style="width: 100%; margin: auto" id="npphotos">
+				
+			</div>
+			</marquee>
+        	</figure>
+    	</div>
+    	
+    	<div id="gallery" style="margin-top: 0px;padding-top: 0px;">
+        			<figure>
+          				<header class="heading" style="color:#4C0000;font-size: 20px;border-bottom: 1px solid #6ea61b;padding-bottom: 10px;">Photo Gallery</header>
+          				<marquee direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+				          <div id="gallerycontent">
+				            
+				          </div>
+				         </marquee>
+        				</figure>
+  				</div>
+  				
+  				<h2 style="color:#4C0000;font-size: 20px;border-bottom: 1px solid #6ea61b;padding-bottom: 10px;">Quickly Find What You Are Looking For</h2>
+       	<div class="myfont" >
+        <div class="one_quarter first"> 
+          <!-- ################################################################################################ -->
+          <ul class="nospace">
+            <li><a href="http://unipune.ac.in/" target="_blank">&#9755; Savitribai Phule Pune University</a></li>
+			<li><a href="https://mahaeschol.maharashtra.gov.in" target="_blank">&#9755; Samaj Kalyan(E Scholarship)</a></li>
+			<li><a href="http://pdeapune.org" target="_blank">&#9755; PDEA Pune</a></li>
+          </ul>
+          <!-- ################################################################################################ --> 
+        </div>
+        <div class="one_quarter"> 
+          <!-- ################################################################################################ -->
+          <ul class="nospace">
+          	<li><a href="http://exam.unipune.ac.in" target="_blank">&#9755; SPPU's Online Examination Form</a></li>
+          	<li><a href="#">&#9755; Anti Ragging</a></li> 
+          	<li><a href="https://www.aicte-india.org/" target="_blank">&#9755; AICTE</a></li>
+          
+          </ul>
+          <!-- ################################################################################################ --> 
+        </div>
+        <div class="one_quarter"> 
+          <!-- ################################################################################################ -->
+          <ul class="nospace">
+          	<li><a href="http://dte.org.in" target="_blank">&#9755; Directorate of Technical Education</a></li>
+          	<li><a href='https://pdeacoem.s3.us-east-2.amazonaws.com/wgc/wgcdoc.pdf' target="_blank">&#9755; Women's Grievance Cell</a></li>
+          	<li><a href='https://mahadbt.gov.in' target="_blank">&#9755; MAHADBT</a></li>
+          </ul>
+          <!-- ################################################################################################ --> 
+        </div>
+        <div class="one_quarter"> 
+          <!-- ################################################################################################ -->
+          <ul class="nospace">
+          	<li><a href="http://ropune.org.in" target="_blank">&#9755; RO DTE, Pune</a></li>
+          	<li><a href="manddis">&#9755; Mandatory Disclosure</a></li>  
+          </ul>
+          <!-- ################################################################################################ --> 
+        </div>
+		</div>
+      </main>
+      <button type="button" id="watchButton" class="btn btn-info" data-toggle="modal" data-target="#myModal" style="background: #3C1A5B;display: none;" >Edit</button>
+      <!-- Modal -->
+				  <div class="modal fade" id="myModal" role="dialog">
+				    <div class="modal-dialog">
+				    
+				      <!-- Modal content-->
+				      <div class="modal-content" style="height: 550px;width: 700px;margin-left: 0px;">
+				        <div class="modal-header"  style="border-bottom: 5px solid #6ea61b;">
+				           <button type="button" class="close" data-dismiss="modal">&times;</button>
+				          <div id="mtext">	
+		                      <p id="tophead">PUNE DISTRICT EDUCATION ASSOCIATION'S</p>
+						      <p id="middlehead">COLLEGE OF ENGINEERING</p>
+						      <p id="bottomhead" style="margin-bottom: 5px;">Manjari (BK), Pune - 412307(Maharashtra) India</p>
+						      <p id="bbhead" style="color: #e94b01">**NAAC Accredited**</p>
+						      <p id="bbhead">Approved by AICTE, New Delhi No. 740-89-316 E/ET/98 (Year of Establishment - 1998)</p>
+						      <p id="bbhead">Affiliated to Savitribai Phule Pune University, Pune | DTE Code: 6206 | Pune Uni. Code: 4026(Engg.) 1223(MBA)</p>
+						  	</div>
+				         
+				        </div>
+				        <div class="modal-body">
+				          <h2 style="font-weight: bold;color:#FF851B;font-size: 20px;padding: 10px;border-bottom: 1px solid #6ea61b;">For Engineering First Year And Direct Second Year Admission </h2>
+				              <ul style="list-style-type: none;">
+				                 <li style="color: black;font-size: 15px;font-weight: bold;padding: 5px;">&#9755; Prof. M.S.Kedari :- 9011077464</li>
+				                 <li style="color: black;font-size: 15px;font-weight: bold;padding: 5px;">&#9755; Prof. R.M.Kawale :- 8788929072</li>
+				                 <li style="color: black;font-size: 15px;font-weight: bold;padding: 5px;">&#9755; Prof. V.S.Hiwarale :- 9922886753</li>
+				                 <li style="color: black;font-size: 15px;font-weight: bold;padding: 5px;">&#9755; Prof. A.A.Bamanikar :- 9545941727</li>
+				                 <li style="color: black;font-size: 15px;font-weight: bold;padding: 5px;">&#9755; College Contact :- 8888776206</li>
+				              </ul>
+				               <h2 style="font-weight: bold;color:#FF851B;font-size: 20px;padding: 10px;border-bottom: 1px solid #6ea61b;">For MBA Admission </h2>
+				              <ul style="list-style-type: none;">
+				                 <li style="color: black;font-size: 15px;font-weight: bold;padding: 5px;">&#9755; Prof. A.S.Deshpande :- 9325441692</li>
+				              </ul>
+				        </div>
+				       
+				      </div>
+				      
+				    </div>
+				  </div>
+			  <!-- MOdel End -->
+      
+      </div>
+      
+      </div >
+      
+      
+      <!-- ################################################################################################ --> 
+      <!-- ################################################################################################ -->
+      
+      <!-- ################################################################################################ --> 
+      <!-- / main body -->
+     
+    
+ 
+
+
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>:: JSP Page</title>
+<meta charset="utf-8">
+<script src="layout/scripts/jquery.min.js"></script> 
+<!-- <script>
+$(function(){
+	$.ajax({
+        type: "GET",
+        url: "hitcounter",                
+        success:function(data){
+        },
+        error:function(){
+        } 
+    });
+});
+</script> -->
+</head>
+<body id="top">
+<div class="wrapper row4">
+  <div class="rounded">
+    
+    <footer id="footer" class="clear"> 
+      <!-- ################################################################################################ -->
+      <div class="one_third first">
+        <figure class="center"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.1022291191166!2d73.98048791445812!3d18.524281887406776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c258af5922cf%3A0xde3b91beb5003629!2sPune+District+Education+Association&#39;s+College+of+Engineering!5e0!3m2!1sen!2sin!4v1480922622020" width="300" height="150" style="border:0"></iframe>
+          <figcaption><a href="https://goo.gl/maps/8xkRhHZD6YT2">Find Us With Google Maps &raquo;</a></figcaption>
+        </figure>
+      </div>
+      <!-- <h3>Contact No. : <br> 020-26996275 (Reception)<br> 020-26996625 (I/c Principal Dr. D. A. Kamble)  <br> Fax No. 020-26996275</h3>
+<h3>For Admission Inquiry:<br>Toll Free No.(1800 3000 6206)</br><br> 9011077464 (Prof. M. S. Kedari)<br> 
+9325441692 (Prof. A. S. Deshpande) </h3> -->
+      <div class="one_third" style="color:#4C0000;">
+        <address>
+        Pune District Education Association's<br/>
+        College of Engineering, Manjari (Bk)<br/>
+        Hadapsar - Wagholi Road,<br/>
+        Taluka: Haveli, Dist: Pune - 412 307<br/>
+        <br>
+        <i class="fa fa-phone pright-10"></i>020 26996275 (Reception)<br/>
+        <i class="fa fa-fax pright-10"></i>Fax No. 020-26996275<br/>
+         <i class="fa fa-fax pright-10"></i>Mob. No. 8888776206<br/>
+        <i class="fa fa-envelope-o pright-10"></i> <a href="#">info@pdeacoem.org</a>
+        
+        </address>
+      </div>
+      <div class="one_third" style="color:#4C0000;">
+        <p class="nospace btmspace-10">Stay Up to Date With What's Happening</p>
+        <ul class="faico clear">
+          <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+        
+        <p class="nospace btmspace-10" style="margin-top: 35px;color:#4C0000;font-size: small;"><b>For Admission Inquiry</b><br/><span style="font-weight: bold;">&#9755; Toll Free No: 1800 3000 6206</span><br/>&#9755; F. E. Admission I/C (Prof. M. S. Kedari)-9011077464 <br/>&#9755; Engg. Admission I/C (Prof. R. K. Moje) - 9970857007<br/>&#9755; M.B.A. Admission I/C (Prof. A. S. Deshpande)-9325441692</p>
+      </div>
+      <span style="color: #ffffff;background: #000000;margin-left:0px;margin-bottom:0px;padding: 4px;float: left;font-size: large;">Website Hits: 1481809</span>
+      <!-- ################################################################################################ --> 
+    </footer>
+  </div>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">College of Engineering, Manjari</a></p>    
+    <p class="fl_right">Powered by <a target="_blank" href="https://www.techdivinity.com/" style="text-decoration: underline;">Techdivinity, Pune</a> <span style="font-size: 8px;">vr:-2023-03-01</span></p>
+    <!-- ################################################################################################ --> 
+  </div>
+</div>
+</body>
+</html>
+</div>
+<!-- <script type="text/javascript">
+
+	 $(function(){ 
+		 
+		$.ajax({
+             type: "GET",
+             url: "loadhd",                
+             dataType: "json",
+             success:function(data){
+             	if(data!=''){
+             		var c=1;
+             		$.each(data, function (i, item) {
+  	    				if(item.link=='Link 1'){
+  	    					$("#link1").prop('href','downloadhd?hdid='+item.hdid);
+  	  	    				$("#span1").empty();
+  	  	    				$("#span1").append(item.information);
+  	  	    				c++;	
+  	    				}
+  	    				else if(item.link=='Link 2'){
+  	    					$("#link2").prop('href','downloadhd?hdid='+item.hdid);
+  	    					$("#span2").empty();
+  	    					$("#span2").append(item.information);	
+  	    				}
+             			/* $("#loadhd").append('<li class="clear"><a href="downloadhd?hdid='+item.hdid+'" target="_blank">'+item.information+'</a></li>'); */	
+  	    			});
+                }
+             },
+             error:function(){
+             } 
+         });
+		 
+		
+		
+		 $.ajax({
+             type: "GET",
+             url: "erp/admin/virtualtour",                
+             dataType: "json",
+             success:function(data){
+             	if(data!=''){
+             		$('#vtour').prop('src','https://s3.us-east-2.amazonaws.com/pdeacoem/virtualtour/'+data);
+                }
+             	
+             	else
+             	{
+             		$('#vtour source').prop('src','');
+             	}
+             },
+             error:function(){
+             } 
+         });
+		 //Photo gallery
+		 $.ajax({
+	           type: "GET",
+	           url: "publicgalleryindex",                
+	           dataType: "json",
+	           success:function(data){
+	           	if(data){
+	           		var c=1;
+	           		$.each(data, function(i,item) {
+	           			/* if(c==1)
+	           			{ */
+	           				$("#gallerycontent").append('<div class="gallerythumb"><a class="nlb" data-lightbox-gallery="gallery1" href="publicsubgallery?galleryid='+item.galleryId+'&caption='+item.caption+'" title="Click to view subgalleries">'+item.caption+'<br/><img class="borderedbox" src="https://s3.us-east-2.amazonaws.com/pdeacoem/gallery/'+item.imagename+'" alt="" id="img1" style="height: 80px;width: 115px"></a></li>');
+	           				c++;
+	           			/* } */
+	           			/* else
+	           			{
+	           				$("#gallerycontent").append('<li class="one_quarter"><a class="nlb" data-lightbox-gallery="gallery1" href="publicsubgallery?galleryid='+item.galleryId+'&caption='+item.caption+'" title="Click to view subgalleries">'+item.caption+'<br/><img class="borderedbox" src="res/gallery/'+item.imagename+'" alt="" id="img1" style="height: 101px;width: 220px"></a></li>');
+	           			} */
+	           		  });
+	               }
+	           	else
+	           		{
+	           		alert("no data");
+	           		}
+	           	
+	           },
+	           error:function(){
+	           } 
+	      });
+		 //News Paper Gallery
+		 $.ajax({
+	           type: "GET",
+	           url: "erp/admin/newspaperphotos",                
+	           dataType: "json",
+	           success:function(data){
+	        	   if(data.length!= 0){
+	   	    		$.each(data, function (i, item) {
+	           			$("#npphotos").append('<div class="gallerythumb"><a class="nlb" data-lightbox-gallery="gallery1" href="" title="Click to enlarge news">'+item.tagline+'</a><br/><a class="highslide" href="https://s3.us-east-2.amazonaws.com/pdeacoem/npphotos/'+item.imagename+'" onclick="return hs.expand(this)"><img src="https://s3.us-east-2.amazonaws.com/pdeacoem/npphotos/'+item.imagename+'" alt="'+item.tagline+'" style="height: 80px;width: 115px"/></a></div>');
+	           		});
+	           	}
+	           },
+	           error:function(){
+	           	
+	           } 
+	      });
+		
+});
+
+</script>
+<script type="text/javascript">
+
+			$(function(){
+				$.ajax({
+	                type: "GET",
+	                url: "loadevents",                
+	                dataType: "json",
+	                success:function(data){
+	                	if(data!=''){
+	                		$.each(data, function(i,item) {
+	                			if(item.branchName==""){
+	                				$('#myEvents').append('<li class="clear"><p class="nospace btmspace-15" id="mar1"><a style="color:#040e85;" href="loadevents?eventid='+item.eventId+'" target="_blank"><span style="color:red">*</span>'+item.eventtitle+'</a></p></li>');
+	                			}
+	                			else{
+	                				$('#myEvents').append('<li class="clear"><p class="nospace btmspace-15" id="mar1"><a style="color:#040e85;" href="loadevents?eventid='+item.eventId+'" target="_blank"><span style="color:red">*</span>'+item.eventtitle+'('+item.branchName+')</a></p></li>');
+	                			}
+	                			
+	                		  });
+	                    }
+	                	else
+	                	{
+	                		$('#myEvents').append('<li class="clear"><p class="nospace btmspace-15"  id="mar2"><a style="color:#040e85;" href="#">No events to show</a></p></li>');
+	                	}
+	                },
+	                error:function(){
+	                	
+	                } 
+	            });
+				
+				$.ajax({
+	                type: "GET",
+	                url: "loadnews",                
+	                dataType: "json",
+	                success:function(data){
+	                	if(data!=''){
+	                		$.each(data, function(i,item) {
+	                			if(item.branchName==""){
+	                				$('#myNews').append('<li class="clear"><p class="nospace btmspace-15"  id="mar3"><a style="color:#047385;" href="loadnews?newsid='+item.newsId+'" target="_blank"><span style="color:red">*</span>'+item.newstitle+'</a></p></li>');
+	                			}
+	                			else{
+	                				$('#myNews').append('<li class="clear"><p class="nospace btmspace-15"  id="mar3"><a style="color:#047385;" href="loadnews?newsid='+item.newsId+'" target="_blank"><span style="color:red">*</span>'+item.newstitle+'('+item.branchName+')</a></p></li>');
+	                			}
+	                			
+	                		  });
+	                    }
+	                	else
+	                	{
+	                		$('#myNews').append('<li class="clear"><p class="nospace btmspace-15"  id="mar4"><a style="color:#047385;" href="#">No News to show</a></p></li>');
+	                	}
+	                },
+	                error:function(){
+	                	
+	                } 
+	            });
+				
+			});
+
+</script> -->
+
+<!-- JAVASCRIPTS --> 
+<script src="layout/scripts/jquery.min.js"></script> 
+<script src="layout/scripts/jquery.fitvids.min.js"></script> 
+<script src="layout/scripts/tabslet/jquery.tabslet.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
